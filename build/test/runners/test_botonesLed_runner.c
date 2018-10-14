@@ -35,7 +35,7 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_pushDownEventIn(void);
+extern void test_pushEventIn(void);
 
 
 /*=======Suite Setup=====*/
@@ -70,7 +70,7 @@ int main(void)
 {
   suite_setup();
   UnityBegin("test_botonesLed.c");
-  RUN_TEST(test_pushDownEventIn, 10);
+  RUN_TEST(test_pushEventIn, 12);
 
   return suite_teardown(UnityEnd());
 }
