@@ -1,0 +1,8 @@
+*El sistema controla 4 pulsadores donde cada vástago posee un led de color diferente.
+*Recibe el evento de pulsador en estado down o up de un sistema de anti rebote externo.
+*Al recibir un evento de pulsación down el sistema debe indicarlo a otro sistema de control de grabación externo.
+*Debe recibir el evento de inicio de grabación del sistema externo y encender el led asociado al pulsador que originó la orden de inicio de grabación.
+*Al recibir un evento up debe notificarlo al sistema de grabación externo.
+*Debe recibir del sistema de grabación externo el evento de fin de grabación y apagar el led asociado a la grabación finalizada.
+*Cuando un pulsador esté en estado down se deberán ignorar los eventos de los demás pulsadores.
+
