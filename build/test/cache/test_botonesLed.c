@@ -225,3 +225,91 @@ void test_recordingStart(void){
  pushEvent(buttonStatusIN);
 
 }
+
+
+
+
+
+
+
+void test_multipleButtonDown(void){
+
+ button_status_t buttonStatusIN;
+
+
+
+ buttonStatusIN.status = BUTTON_DOWN;
+
+ buttonStatusIN.button = 0;
+
+ recorderStartRecording_CMockExpectAndReturn(92, 0, 0);
+
+ pushEvent(buttonStatusIN);
+
+
+
+
+
+ buttonStatusIN.status = BUTTON_DOWN;
+
+ buttonStatusIN.button = 1;
+
+ pushEvent(buttonStatusIN);
+
+
+
+
+
+ buttonStatusIN.status = BUTTON_UP;
+
+ buttonStatusIN.button = 1;
+
+ pushEvent(buttonStatusIN);
+
+
+
+ buttonStatusIN.status = BUTTON_UP;
+
+ buttonStatusIN.button = 0;
+
+ pushEvent(buttonStatusIN);
+
+
+
+
+
+ buttonStatusIN.status = BUTTON_DOWN;
+
+ buttonStatusIN.button = 1;
+
+ recorderStartRecording_CMockExpectAndReturn(112, 1, 1);
+
+ pushEvent(buttonStatusIN);
+
+
+
+ buttonStatusIN.status = BUTTON_DOWN;
+
+ buttonStatusIN.button = 0;
+
+ pushEvent(buttonStatusIN);
+
+
+
+ buttonStatusIN.status = BUTTON_UP;
+
+ buttonStatusIN.button = 1;
+
+ pushEvent(buttonStatusIN);
+
+
+
+
+
+ buttonStatusIN.status = BUTTON_UP;
+
+ buttonStatusIN.button = 0;
+
+ pushEvent(buttonStatusIN);
+
+}

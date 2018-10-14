@@ -9,12 +9,15 @@
 - :test: test_recordingStart
   :line: 76
   :message: ''
-:failures: []
+:failures:
+- :test: test_multipleButtonDown
+  :line: 87
+  :message: Function recorderStartRecording.  Called more times than expected.
 :ignores: []
 :counts:
-  :total: 2
+  :total: 3
   :passed: 2
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.0010409550159238279
+:time: 0.0010782269528135657
