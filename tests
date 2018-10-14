@@ -1,0 +1,7 @@
+*Se puede recibir un evento de pulsación del sistema de antirebote.
+*Se notifica al sistema de grabación que un pulsador está siendo pulsado.
+*Se ignoran los eventos de pulsación provenientes del sistema de antirebote si se ha recibido un evento de pulsado down y no uno de up del mismo pulsador.
+*Al recibir un evento de grabación iniciada se activa el led asociado al pulsador que se encuentra en estado down.
+*Se notifica el sistema de grabación que el pulsador en estado down pasa a up.
+*Al recibir un evento de grabación finalizada se desactiva el led asociado al pulsador que se encontraba en estado down.
+
