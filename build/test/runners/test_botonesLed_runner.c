@@ -33,6 +33,7 @@
 #endif
 #include <stdio.h>
 #include "mock_recorder.h"
+#include "mock_ledDriver.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -44,6 +45,8 @@ extern void tearDown(void);
 extern void test_pushEventIn(void);
 extern void test_recordingStart(void);
 extern void test_multipleButtonDown(void);
+extern void test_ButtonDownLedOn(void);
+extern void test_ButtonUPRecordingStop(void);
 
 
 /*=======Mock Management=====*/
@@ -53,14 +56,17 @@ static void CMock_Init(void)
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
   mock_recorder_Init();
+  mock_ledDriver_Init();
 }
 static void CMock_Verify(void)
 {
   mock_recorder_Verify();
+  mock_ledDriver_Verify();
 }
 static void CMock_Destroy(void)
 {
   mock_recorder_Destroy();
+  mock_ledDriver_Destroy();
 }
 
 /*=======Suite Setup=====*/
@@ -98,9 +104,11 @@ int main(void)
 {
   suite_setup();
   UnityBegin("test_botonesLed.c");
-  RUN_TEST(test_pushEventIn, 14);
-  RUN_TEST(test_recordingStart, 73);
-  RUN_TEST(test_multipleButtonDown, 88);
+  RUN_TEST(test_pushEventIn, 15);
+  RUN_TEST(test_recordingStart, 76);
+  RUN_TEST(test_multipleButtonDown, 93);
+  RUN_TEST(test_ButtonDownLedOn, 133);
+  RUN_TEST(test_ButtonUPRecordingStop, 155);
 
   CMock_Guts_MemFreeFinal();
   return suite_teardown(UnityEnd());

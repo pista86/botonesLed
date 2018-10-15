@@ -4,20 +4,26 @@
   :file: test_botonesLed.c
 :successes:
 - :test: test_pushEventIn
-  :line: 14
+  :line: 15
   :message: ''
 - :test: test_recordingStart
-  :line: 73
+  :line: 76
   :message: ''
 - :test: test_multipleButtonDown
-  :line: 88
+  :line: 93
+  :message: ''
+- :test: test_ButtonDownLedOn
+  :line: 133
+  :message: ''
+- :test: test_ButtonUPRecordingStop
+  :line: 155
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
+  :total: 5
+  :passed: 5
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0009277579956687987
+:time: 0.0010535279870964587
