@@ -47,6 +47,7 @@ extern void test_recordingStart(void);
 extern void test_multipleButtonDown(void);
 extern void test_ButtonDownLedOn(void);
 extern void test_ButtonUPRecordingStop(void);
+extern void test_ButtonUpLedOff(void);
 
 
 /*=======Mock Management=====*/
@@ -106,9 +107,10 @@ int main(void)
   UnityBegin("test_botonesLed.c");
   RUN_TEST(test_pushEventIn, 15);
   RUN_TEST(test_recordingStart, 76);
-  RUN_TEST(test_multipleButtonDown, 93);
-  RUN_TEST(test_ButtonDownLedOn, 133);
-  RUN_TEST(test_ButtonUPRecordingStop, 155);
+  RUN_TEST(test_multipleButtonDown, 92);
+  RUN_TEST(test_ButtonDownLedOn, 131);
+  RUN_TEST(test_ButtonUPRecordingStop, 152);
+  RUN_TEST(test_ButtonUpLedOff, 170);
 
   CMock_Guts_MemFreeFinal();
   return suite_teardown(UnityEnd());

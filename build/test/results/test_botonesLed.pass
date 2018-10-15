@@ -10,20 +10,23 @@
   :line: 76
   :message: ''
 - :test: test_multipleButtonDown
-  :line: 93
+  :line: 92
   :message: ''
 - :test: test_ButtonDownLedOn
-  :line: 133
+  :line: 131
   :message: ''
 - :test: test_ButtonUPRecordingStop
-  :line: 155
+  :line: 152
+  :message: ''
+- :test: test_ButtonUpLedOff
+  :line: 170
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 5
-  :passed: 5
+  :total: 6
+  :passed: 6
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0010535279870964587
+:time: 0.0009506250498816371
