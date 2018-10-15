@@ -6,8 +6,10 @@
 #define LED_OFF		!LED_ON
 
 static void ledOn(uint8_t led);
+static void ledOff(uint8_t led);
 
 static int8_t buttonPressed = -1;
+static int8_t buttonReleased;
 
 button_status_t pushEvent(button_status_t buttonStatus)
 {
@@ -17,8 +19,7 @@ button_status_t pushEvent(button_status_t buttonStatus)
 	
 		if (buttonPressed == -1)
 		{
-			recorderStartRecording(buttonStatus.button);
-			ledOn((buttonStatus.button));
+			recorderStartRecording(buttonStatus.button);			
 			buttonPressed = buttonStatus.button;
 		}
 		
@@ -26,6 +27,7 @@ button_status_t pushEvent(button_status_t buttonStatus)
 	else if (buttonStatus.button == buttonPressed && buttonStatus.status == BUTTON_UP)
 	{
 		recorderStopRecording(buttonPressed);
+		buttonReleased = buttonPressed;
 		buttonPressed = -1;
 	}
 
@@ -33,6 +35,17 @@ button_status_t pushEvent(button_status_t buttonStatus)
 return buttonStatus;
 
 
+}
+
+
+void recordingStarted(void)
+{
+	ledOn(buttonPressed);
+}
+
+void recordingStopped(void)
+{
+	ledOff(buttonReleased);
 }
 
 
@@ -44,3 +57,9 @@ static void ledOn(uint8_t led)
 }
 
 
+static void ledOff(uint8_t led)
+{
+
+	gpioSetOut(led,  LED_OFF);
+
+}

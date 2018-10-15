@@ -12,3 +12,6 @@ typedef struct{
 }button_status_t;
 
 button_status_t pushEvent(button_status_t buttonStatus);
+
+void recordingStarted(void);
+void recordingStopped(void);
