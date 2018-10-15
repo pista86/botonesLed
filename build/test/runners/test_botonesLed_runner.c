@@ -99,8 +99,8 @@ int main(void)
   suite_setup();
   UnityBegin("test_botonesLed.c");
   RUN_TEST(test_pushEventIn, 14);
-  RUN_TEST(test_recordingStart, 76);
-  RUN_TEST(test_multipleButtonDown, 87);
+  RUN_TEST(test_recordingStart, 73);
+  RUN_TEST(test_multipleButtonDown, 88);
 
   CMock_Guts_MemFreeFinal();
   return suite_teardown(UnityEnd());
